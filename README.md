@@ -4,7 +4,7 @@ Make a seeks search inside vim
 
 ## Requirements
 
-    * https://github.com/mattn/webapi-vim
+* https://github.com/mattn/webapi-vim
 
 ## Installation
 
