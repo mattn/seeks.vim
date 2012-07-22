@@ -1,7 +1,7 @@
 *seeks.txt*     Make a seeks search inside vim
 
 Author: Sanpi <sanpi@homecomputing.fr>
-License: Datalove public license, see |License|
+License: see |license|
 Homepage: https://github.com/sanpii/seeks.vim
 
 ==============================================================================
