@@ -5,6 +5,16 @@ if !exists('g:seeks_max_results')
     let g:seeks_max_results = 5
 endif
 
+function! seeks#Find(...)
+    let query = a:0 > 0 ? a:1 : ''
+    if query == ''
+        call inputsave()
+        let query = input('Search: ')
+        call inputrestore()
+    endif
+    call seeks#Search(query)
+endfunction
+
 function! seeks#Search(query)
     echo "Searching ..."
 

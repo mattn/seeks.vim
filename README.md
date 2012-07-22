@@ -19,6 +19,10 @@ I recommend installation with [pathogen.vim](https://github.com/tpope/vim-pathog
 
     nnoremap <silent> <C-K> :call seeks#Search('<cword>')<CR>
 
+### Commands
+
+    :Seeks [query]
+
 ## Configuration
 
     let g:seeks_node = 'http://seeks.fr'

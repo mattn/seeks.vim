@@ -7,10 +7,11 @@ Homepage: https://github.com/sanpii/seeks.vim
 ==============================================================================
 Contents                                              *seeks* *seeks-contents*
 
-    1. Requirements  |seeks-requirements|
-    2. Installation  |seeks-installation|
-    3. Usage ....... |seeks-usage|
-    4. Configuration |seeks-configuration|
+    1. Requirements ....... |seeks-requirements|
+    2. Installation ....... |seeks-installation|
+    3. Usage .............. |seeks-usage|
+        Commands .......... |seeks-command|
+    4. Configuration ...... |seeks-configuration|
 
 ==============================================================================
 1. Requirements                                           *seeks-requirements*
@@ -32,6 +33,14 @@ I recommend installation with pathogen.vim
 >
     nnoremap <silent> <C-K> :call seeks#Search('<cword>')<CR>
 <
+
+------------------------------------------------------------------------------
+COMMANDS                                                      *seeks-commands*
+
+:Seeks [query]                                                        *:Seeks*
+
+    Search [query]. If no argument provided, the input dialog will ask you.
+
 ==============================================================================
 4. Configuration                                         *seeks-configuration*
 
