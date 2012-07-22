@@ -15,7 +15,7 @@ I recommend installation with [pathogen.vim](https://github.com/tpope/vim-pathog
 
 ## Usage
 
-    nnoremap <silent> <C-K> :call seeks#Search(expand('<cword>'))<CR>
+    nnoremap <silent> <C-K> :call seeks#Search('<cword>')<CR>
 
 ## Configuration
 
