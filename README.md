@@ -2,6 +2,8 @@
 
 Make a seeks search inside vim
 
+![Screenshot](https://github.com/downloads/sanpii/seeks.vim/seeks-vim.png)
+
 ## Requirements
 
 * https://github.com/mattn/webapi-vim
