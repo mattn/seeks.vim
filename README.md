@@ -27,3 +27,4 @@ I recommend installation with [pathogen.vim](https://github.com/tpope/vim-pathog
 
     let g:seeks_node = 'http://seeks.fr'
     let g:seeks_max_results = 5
+    let g:seeks_append_results = 0

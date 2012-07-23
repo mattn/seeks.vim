@@ -65,3 +65,15 @@ Exemple:
 >
     let g:seeks_max_results = -1
 <
+
+                                                      *g:seeks_append_results*
+g:seeks_append_results~
+Default: 0
+
+If true (1), the new results are append on the top of window and the old
+results collapsed. If false (0), old results are deleted.
+
+Exemple:
+>
+    let g:seeks_append_results = 1
+<

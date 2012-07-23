@@ -4,6 +4,9 @@ endif
 if !exists('g:seeks_max_results')
     let g:seeks_max_results = 5
 endif
+if !exists('g:seeks_append_results')
+    let g:seeks_append_results = 0
+endif
 
 function! seeks#Find(...)
     let query = a:0 > 0 ? a:1 : ''
@@ -76,12 +79,15 @@ function! s:PopulateWindow()
     setlocal modifiable
     setlocal noreadonly
 
-    " Delete previous content
-    normal! ggdG
+    normal! gg
+    if g:seeks_max_results == 0
+        " Delete previous content
+        normal! dG
+    endif
     " Paste new content
     normal! "zP
     " Fold
-    normal! zmzo
+    normal! zmjzo
 
     setlocal nomodifiable
     setlocal readonly
