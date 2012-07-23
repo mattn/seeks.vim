@@ -24,15 +24,17 @@ function! seeks#Search(query)
     let results = webapi#json#decode(json.content)
 
     let i = 0
+    let @z = "Results for '" . query . "':\n"
     for snippet in results.snippets
         if g:seeks_max_results > 0 && i > g:seeks_max_results
             break
         endif
-        let @z = @z . snippet.url . "\n"
-            \ . "\t" . snippet.title . "\n\n"
-            \ . "\t" . snippet.summary . "\n"
+        let @z = @z . "\t" . snippet.url . "\n"
+            \ . "\t\t" . snippet.title . "\n\n"
+            \ . "\t\t" . snippet.summary . "\n"
         let i = i + 1
     endfor
+    let @z = @z . "\n"
 
     call s:OpenWindow()
 endfunction
@@ -77,9 +79,9 @@ function! s:PopulateWindow()
     " Delete previous content
     normal! ggdG
     " Paste new content
-    normal! "zPgg
+    normal! "zP
     " Fold
-    normal! zm
+    normal! zmzo
 
     setlocal nomodifiable
     setlocal readonly
