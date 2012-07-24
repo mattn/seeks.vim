@@ -3,20 +3,19 @@ let g:seeks_max_results = get(g:, 'seeks_max_results', 5)
 let g:seeks_append_results = get(g:, 'seeks_append_results', 0)
 
 function! seeks#Find(...)
-    let query = a:0 > 0 ? a:1 : ''
+    let query = a:0 > 0 ? expand(a:1) : ''
     if query == ''
         call inputsave()
         let query = input('Search: ')
         call inputrestore()
     endif
-    call seeks#Search(query)
+    call s:Search(query)
 endfunction
 
-function! seeks#Search(query)
+function! s:Search(query)
     echo "Searching ..."
 
-    let query = expand(a:query)
-    let url = g:seeks_node . '/search?output=json&q=' . webapi#http#encodeURI(query)
+    let url = g:seeks_node . '/search?output=json&q=' . webapi#http#encodeURI(a:query)
     let json = webapi#http#get(url)
     let results = webapi#json#decode(json.content)
 

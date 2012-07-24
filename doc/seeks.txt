@@ -31,7 +31,7 @@ I recommend installation with pathogen.vim
 3. Usage                                                         *seeks-usage*
 
 >
-    nnoremap <silent> <C-K> :call seeks#Search('<cword>')<CR>
+    nnoremap <silent> <C-K> :call seeks#Find('<cword>')<CR>
 <
 
 ------------------------------------------------------------------------------
