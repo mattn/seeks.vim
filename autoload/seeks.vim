@@ -1,12 +1,6 @@
-if !exists('g:seeks_node')
-    let g:seeks_node = 'http://seeks.fr'
-endif
-if !exists('g:seeks_max_results')
-    let g:seeks_max_results = 5
-endif
-if !exists('g:seeks_append_results')
-    let g:seeks_append_results = 0
-endif
+let g:seeks_node = get(g:, 'seeks_node', 'http://seeks.fr')
+let g:seeks_max_results = get(g:, 'seeks_max_results', 5)
+let g:seeks_append_results = get(g:, 'seeks_append_results', 0)
 
 function! seeks#Find(...)
     let query = a:0 > 0 ? a:1 : ''
