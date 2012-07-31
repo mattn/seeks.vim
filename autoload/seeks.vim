@@ -13,6 +13,7 @@ function! seeks#Find(...)
 endfunction
 
 function! s:Search(query)
+    redraw
     echo "Searching ..."
 
     let url = g:seeks_node . '/search?output=json&q=' . webapi#http#encodeURI(a:query)
@@ -20,7 +21,7 @@ function! s:Search(query)
     let results = webapi#json#decode(json.content)
 
     let i = 0
-    let @z = "Results for '" . query . "':\n"
+    let @z = "Results for '" . a:query . "':\n"
     for snippet in results.snippets
         if g:seeks_max_results > 0 && i > g:seeks_max_results
             break
@@ -80,7 +81,7 @@ function! s:PopulateWindow()
     " Paste new content
     normal! "zP
     " Fold
-    normal! zmjzo
+    silent! normal! zmjzo
 
     setlocal nomodifiable
     setlocal readonly
